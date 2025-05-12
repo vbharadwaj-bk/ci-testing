@@ -24,6 +24,8 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        wget https://developer.download.nvidia.com/compute/cuda/12.9.0/local_installers/cuda_12.9.0_575.51.03_linux.run
+        sh cuda_12.9.0_575.51.03_linux.run
         pip install -r .github/workflows/requirements-cuda-ci.txt
 
     - name: Test with pytest
