@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   verify_cuda_extension:
-    if: ${{ github.event.label.name == 'ci-ready' }}
+    if: ${{ github.event.label.name == 'ci-ready' || github.event_name != 'pull_request' }}
     runs-on: ubuntu-latest
 
     steps:
